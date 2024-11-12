@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Special Surprise</title>
+    <style>
+        * {
+            box-sizing: border-box;
+        }
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            font-family: Arial, sans-serif;
+            background-color: #f3e5f5;
+            margin: 0;
+        }
+        #content {
+            text-align: center;
+            padding: 20px;
+            border-radius: 8px;
+            background-color: #fff;
+            box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2);
+            max-width: 500px;
+            width: 100%;
+        }
+        h1 {
+            color: #9c27b0;
+        }
+        label, p {
+            font-size: 1.1em;
+            color: #555;
+        }
+        input[type="text"] {
+            padding: 8px;
+            font-size: 1em;
+            margin: 10px 0;
+            width: 80%;
+            border-radius: 4px;
+            border: 1px solid #ccc;
+        }
+        button {
+            padding: 8px 16px;
+            font-size: 1em;
+            color: white;
+            background-color: #8e24aa;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+        button:hover {
+            background-color: #6d1b7b;
+        }
+        #secret-content {
+            margin-top: 20px;
+            font-size: 1.5em;
+            color: #444;
+        }
+        #lovely-image {
+            width: 60%; /* Image size reduced */
+            border-radius: 8px;
+            margin-top: 10px;
+        }
+        .message {
+            margin-top: 15px;
+            font-size: 1.4em; /* Larger font size for the message */
+            color: #9c27b0;
+            font-weight: bold;
+        }
+        .headline {
+            font-size: 2em; /* Larger font for "Surprise!" */
+            color: #8e24aa;
+        }
+    </style>
+</head>
+<body>
+    <div id="content">
+        <h1>Surprise Page</h1>
+        <p>Answer the question to unlock a special surprise!</p>
+        
+        <label for="password">Enter the name of your wife:</label>
+        <input type="text" id="password" placeholder="Your answer...">
+        <button onclick="checkPassword()">Submit</button>
+        
+        <div id="secret-content" style="display: none;">
+            <h2 class="headline">Surprise! 💖</h2>
+            <p>Here’s one of our favorite memories together:</p>
+            <img id="lovely-image" src="bullshit.jpg" alt="A lovely picture of us">
+            <p class="message">To more years to go, and I love you!</p>
+        </div>
+    </div>
+
+    <script>
+        function checkPassword() {
+            // Define the correct answer here
+            const correctAnswer = "Chandana"; // Replace "Chandana" with the correct answer
+            
+            // Get the user's answer from the input field
+            const userAnswer = document.getElementById("password").value.trim();
+            
+            // Check if the answer matches (case-insensitive)
+            if (userAnswer.toLowerCase() === correctAnswer.toLowerCase()) {
+                // If correct, show the hidden content
+                document.getElementById("secret-content").style.display = "block";
+            } else {
+                // If incorrect, show an alert
+                alert("Oops! That's not correct. Try again.");
+            }
+        }
+    </script>
+</body>
+</html>
